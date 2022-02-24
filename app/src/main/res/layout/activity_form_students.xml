@@ -24,21 +24,11 @@
             tools:targetApi="o" />
 
         <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/student_landline_activity_form"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:hint="Telefone Fixo"
-            android:importantForAutofill="no"
-            android:inputType="phone"
-            tools:targetApi="o" />
-
-        <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/student_phone_activity_form"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:hint="Telefone celular"
+            android:hint="Telefone"
             android:importantForAutofill="no"
             android:inputType="phone"
             tools:targetApi="o" />

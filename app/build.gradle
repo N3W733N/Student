@@ -44,6 +44,5 @@ dependencies {
 
     // Room dependencies
     implementation("androidx.room:room-runtime:$roomVersion")
-    annotationProcessor("androidx.room:room-compiler:$roomVersion")
     kapt("androidx.room:room-compiler:$roomVersion")
 }
