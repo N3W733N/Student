@@ -37,7 +37,8 @@ class FormStudentsActivity : AppCompatActivity() {
 
     private fun fillInFields() {
         student_name_activity_form.setText(student?.name)
-        student_phone_activity_form.setText(student?.phone)
+//        student_phone_activity_form.setText(student?.cellPhone)
+//        student_landline_activity_form.setText(student?.landline)
         student_email_activity_form.setText(student?.email)
     }
 
@@ -60,9 +61,11 @@ class FormStudentsActivity : AppCompatActivity() {
     private fun fillStudent() {
         val name = student_name_activity_form.text.toString()
         val phone = student_phone_activity_form.text.toString()
+        val landline = student_landline_activity_form.text.toString()
         val email = student_email_activity_form.text.toString()
         student?.name = name
-        student?.phone = phone
+//        student?.cellPhone = phone
+//        student?.landline = landline
         student?.email = email
     }
 }

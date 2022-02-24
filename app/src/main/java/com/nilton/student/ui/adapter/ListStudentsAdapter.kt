@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import com.nilton.student.R
+import com.nilton.student.database.ScheduleDatabase
 import com.nilton.student.model.Student
 import kotlinx.android.synthetic.main.item_student.view.*
 
@@ -27,13 +28,17 @@ class ListStudentsAdapter : BaseAdapter() {
     override fun getView(position: Int, p1: View?, viewGroup: ViewGroup?): View {
         val viewCreated = createView(viewGroup, viewGroup?.context)
         val studentReturned = students[position]
-        setupView(viewCreated, studentReturned)
+        setupView(viewCreated, studentReturned, viewGroup?.context)
         return viewCreated
     }
 
-    private fun setupView(view: View, student: Student) {
+    private fun setupView(view: View, student: Student, context: Context?) {
         view.item_student_name.text = student.name
-        view.item_student_phone.text = student.phone
+        context?.let {
+            val dao = ScheduleDatabase.getInstance(it).phoneDAO
+            val firstPhone = dao.findFirstStudentPhone(student.id)
+            view.item_student_phone.text = firstPhone.number
+        }
     }
 
     private fun createView(viewGroup: ViewGroup?, context: Context?): View {
